@@ -6,9 +6,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.grow.plantillatabs.adapter.SimpleFragmentPageAdapter;
-import com.grow.plantillatabs.fragments.FistFragment;
-import com.grow.plantillatabs.fragments.SecondFragment;
-import com.grow.plantillatabs.fragments.ThirdFragment;
+import com.grow.plantillatabs.fragments.MarsListFragment;
+import com.grow.plantillatabs.fragments.MarsCardsFragment;
+import com.grow.plantillatabs.fragments.MarsOtherFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         SimpleFragmentPageAdapter adapter = new SimpleFragmentPageAdapter(getSupportFragmentManager());
 
         //Adding Fragments and Tab Names
-        adapter.addFragment(new FistFragment(), getString(R.string.firstTabName));
-        adapter.addFragment(new SecondFragment(), getString(R.string.secondTabName));
-        adapter.addFragment(new ThirdFragment(), getString(R.string.thirdTabName));
+        adapter.addFragment(new MarsListFragment(), getString(R.string.firstTabName));
+        adapter.addFragment(new MarsCardsFragment(), getString(R.string.secondTabName));
+        adapter.addFragment(new MarsOtherFragment(), getString(R.string.thirdTabName));
 
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);

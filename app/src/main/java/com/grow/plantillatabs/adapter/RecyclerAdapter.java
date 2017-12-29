@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.grow.plantillatabs.R;
-import com.grow.plantillatabs.models.Toys;
+import com.grow.plantillatabs.contrib.views.TextViewExoBold;
+import com.grow.plantillatabs.contrib.views.TextViewExoThin;
+import com.grow.plantillatabs.models.Planets;
 
 import java.util.List;
 
@@ -20,25 +22,25 @@ import java.util.List;
 
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    private List<Toys> mDataset;
+    private List<Planets> mDataset;
     private Context mContext;
 
     // ---- CONSTRUCTOR ----
-    public RecyclerAdapter(List<Toys> myDataset, Context context) {
+    public RecyclerAdapter(List<Planets> myDataset, Context context) {
         mDataset = myDataset;
         mContext = context;
     }
 
     // ---- VIEWHOLDER ----
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView toyImage;
-        public TextView toyName;
-        public TextView toyPrice;
+        public ImageView planetImage;
+        public TextViewExoBold planteName;
+        public TextViewExoThin planetHabitants;
         public ViewHolder(View v) {
             super(v);
-            toyImage = (ImageView) v.findViewById(R.id.iv_toy_image);
-            toyName = (TextView) v.findViewById(R.id.tv_toy_name);
-            toyPrice = (TextView) v.findViewById(R.id.tv_toy_price);
+            planetImage = (ImageView) v.findViewById(R.id.iv_planet_image);
+            planteName = (TextViewExoBold) v.findViewById(R.id.tv_planet_name);
+            planetHabitants = (TextViewExoThin) v.findViewById(R.id.tv_planet_habitants);
         }
     }
 
@@ -46,7 +48,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_recycler, parent, false);
+                .inflate(R.layout.mars_item, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
@@ -54,11 +56,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     // ---- BINDING DATA ----
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.toyName.setText(mDataset.get(position).getName());
-        holder.toyPrice.setText(String.valueOf(mDataset.get(position).getPrice()));
+        holder.planteName.setText(mDataset.get(position).getName());
+        holder.planetHabitants.setText(String.valueOf(mDataset.get(position).getHabitants()));
         Glide.with(mContext)
                 .load(mDataset.get(position).getImage())
-                .into(holder.toyImage);
+                .into(holder.planetImage);
     }
 
     // ---- SIZE OF ITEMS ----

@@ -1,0 +1,28 @@
+{
+  "planets": [
+    {
+      "name": "Jupiter",
+      "color": "green",
+      "habitants": "10000",
+      "image": "http://ramonsandino.com/cosmos2/img/vectorIcons/jupiter/jupiter.png"
+    },
+    {
+      "name": "Pluton",
+      "color": "blue",
+      "habitants": "500",
+      "image": "https://cdn.pixabay.com/photo/2014/04/03/11/57/globe-312668_1280.png"
+    },
+    {
+      "name": "Saturno",
+      "color": "red",
+      "habitants": "3030",
+      "image": "https://cdn.pixabay.com/photo/2012/04/10/17/39/venus-26620_1280.png"
+    },
+    {
+      "name": "Venus",
+      "color": "orange",
+      "habitants": "2003",
+      "image": "https://cdn.pixabay.com/photo/2017/04/04/14/26/pluto-2201446_1280.png"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <!--TOOLBAR-->
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/mars_toolbar"/>
 
     <!--TABS-->
     <android.support.design.widget.TabLayout
